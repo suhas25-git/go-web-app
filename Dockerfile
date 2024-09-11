@@ -1,25 +1,25 @@
-FROM golang:1.21 as base                                      #get golanf as base image is we make app in it
+FROM golang:1.21 as base                                      
 
-WORKDIR /app                                                  #make work dir /app
+WORKDIR /app                                                 
 
-COPY go.mod .                                                 #Dependencies are stored here like requirement file 
+COPY go.mod .                                                
 
-RUN go mod download                                           #run this to download 
+RUN go mod download                                           
 
-COPY . .                                                      #this command copy source-code to docker image
+COPY . .                                                   
 
-RUN go build -o /main .                                       # this run a command to run project and a binary call main is created
+RUN go build -o /main .                                      
 
 # final stage with distroless iamge
 
-FROM gcr.io/distroless/base      					  #get a distroless image for reduce size
+FROM gcr.io/distroless/base      					 
 
-COPY --from=base /app/main .						  #copy main binary file from base 
+COPY --from=base /app/main .						 
 
-COPY --from=base /app/static ./static 					  #copy static file frombase
+COPY --from=base /app/static ./static 					 
 
 
-EXPOSE 8080                                                   #expose port for connection
+EXPOSE 8080                                                  
 
-CMD [ "./main" ]                                              #run the coammnd to run project
+CMD [ "./main" ]                                             
 
