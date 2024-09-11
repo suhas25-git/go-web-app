@@ -6,7 +6,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx                         # this tells ingress-controller to look for this file only
+  ingressClassName: nginx                       
   rules:
   - host: go-web-app.local
     http:
@@ -15,6 +15,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: go-web-app            #service name and port accordingly as in service
+            name: go-web-app           
             port:
               number: 80
