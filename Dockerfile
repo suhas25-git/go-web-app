@@ -8,7 +8,7 @@ RUN go mod download
 
 COPY . .                                                   
 
-RUN go build -o /main .                                      
+RUN go build -o main .                                      
 
 # final stage with distroless iamge
 
