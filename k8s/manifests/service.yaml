@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-web-app
+  lables:
+    app:go-web-app
+spec:
+  ports:
+  - protocol: TCP
+      port: 80               
+      targetPort: 8080       #port defined in 
+
+  selector:
+    app: go-web-app          # selector has to match the lable that you provided in pods specification
+  type:ClusterIp
