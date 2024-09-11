@@ -8,8 +8,8 @@ spec:
   ports:
   - protocol: TCP
       port: 80               
-      targetPort: 8080       #port defined in 
+      targetPort: 8080      
 
   selector:
-    app: go-web-app          # selector has to match the lable that you provided in pods specification
+    app: go-web-app         
   type:ClusterIp
