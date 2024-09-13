@@ -19,7 +19,7 @@ The server will start on port 8080. You can access it by navigating to `http://l
 Install Docker
 
     sudo apt-get update
-    sudo apt-get install docker.io - y
+    sudo apt-get install docker.io -y
     sudo usermod -aG docker $USER && newgrp docker
 
 
