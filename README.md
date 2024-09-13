@@ -29,6 +29,10 @@ Install Docker
     sudo install minikube-linux-amd64 /usr/local/bin/minikube
     sudo snap install kubectl --classic
     minikube start — driver=docker
+ 
+ Install ingress controller
+ 
+    minikube addons enable ingress    
     
 To run the srever on port-forwading
 
@@ -36,6 +40,4 @@ To run the srever on port-forwading
 
 
  
- install ingress controller
- 
-    minikube addons enable ingress
+
