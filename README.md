@@ -16,15 +16,12 @@ The server will start on port 8080. You can access it by navigating to `http://l
 
 ![Website](static/images/golang-website.png)
 
-to run the srever on post forwading
+Install Docker
 
-    kubectl port-forward service/go-web-app 8080:8080 --address 0.0.0.0
+    sudo apt-get update
+    sudo apt-get install docker.io - y
+    sudo usermod -aG docker $USER && newgrp docker
 
-
- 
- install ingress controller
- 
-    minikube addons enable ingress
 
  To install minikube and start cluster
     
@@ -33,3 +30,12 @@ to run the srever on post forwading
     sudo snap install kubectl --classic
     minikube start — driver=docker
     
+To run the srever on port-forwading
+
+    kubectl port-forward service/go-web-app 8080:8080 --address 0.0.0.0
+
+
+ 
+ install ingress controller
+ 
+    minikube addons enable ingress
