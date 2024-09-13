@@ -29,15 +29,24 @@ Install Docker
     sudo install minikube-linux-amd64 /usr/local/bin/minikube
     sudo snap install kubectl --classic
     minikube start — driver=docker
- 
- Install ingress controller
- 
-    minikube addons enable ingress    
+
+go to manifest file & run deployment,services 
+
+    cd /home/ubuntu/go-web-app/k8s/manifests
+    kubectl apply -f deployment.yaml
+    kubectl apply -f service.yaml
+
     
 To run the srever on port-forwading
 
     kubectl port-forward service/go-web-app 8080:8080 --address 0.0.0.0
 
+check services by using command
 
+    Ec2_ip:8080/home
+    
+Install ingress controller
+ 
+    minikube addons enable ingress 
  
 
